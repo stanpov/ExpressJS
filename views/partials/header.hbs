@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="/">Tutorials</a>
+
+    <ul class="navbar-nav ml-auto">
+        {{#if isLoggedIn}}
+        <li class="nav-item">
+            <a class="nav-link" href="/">Welcome, {{username}}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+        {{/if}}
+
+    </ul>
+</nav>
+{{#if errorMessage}}
+<section class="notifications">
+    <p class="notification-message">{{errorMessage}}</p>
+</section>
+{{/if}}
